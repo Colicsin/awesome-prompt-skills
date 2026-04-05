@@ -1,21 +1,8 @@
-# Claude Code Skills 集合
-
-按系列组织的 Claude Code Skills，涵盖科研实验管理、学术论文引用等领域。
-
-## 📑 Skills 索引
-
-| 系列 | 描述 | 位置 |
-|------|------|------|
-| **exp-workflow** | 科研实验管理工作流（6 个阶段） | `exp-workflow/` |
-| **paper-citation** | 学术论文智能引用检索 | `paper-citation/` |
-
----
-
-## 实验工作流系列 · exp-workflow
+# 实验工作流系列 · exp-workflow
 
 一套用于科研实验管理的 Claude Code Skills，帮助你系统化地完成从想法到复盘的完整实验流程。
 
-### 设计理念
+## 设计理念
 
 传统的实验管理方式要么太随意（想到哪做到哪），要么太繁琐（填不完的表格）。这套 skills 的目标是：
 
@@ -23,25 +10,7 @@
 - **多轮交互，而非填模板**：通过对话逐步澄清需求，不要求一次性提供完整信息
 - **防止"做完才发现一开始就错了"**：每个阶段有明确的退出条件，确保你真正理解后再推进
 
----
-
-## 安装方法
-
-```bash
-# 克隆整个 repo
-git clone https://github.com/Rain0530/awesome-prompt-skills.git
-
-# 复制 skills 到本地
-cp -r awesome-prompt-skills/skills/* ~/.claude/skills/
-```
-
-安装完成后，在 Claude Code 中输入 `/exp-help` 验证是否生效。
-
----
-
-## exp-workflow 详细说明
-
-### Skills 一览
+## Skills 一览
 
 | 命令 | 阶段 | 用途 |
 |------|------|------|
@@ -53,7 +22,7 @@ cp -r awesome-prompt-skills/skills/* ~/.claude/skills/
 | `/exp-log` | 阶段 5 · 执行记录 | 节点前理解确认、结果记录解读、异常处理 |
 | `/exp-retro` | 阶段 6 · 复盘归档 | 分析结论，补充主观判断，生成复盘报告 |
 
-### 工作流程
+## 工作流程
 
 ```
 /exp-start  →  /exp-design  →  /exp-review  →  /exp-plan  →  /exp-log  →  /exp-retro
@@ -62,7 +31,7 @@ cp -r awesome-prompt-skills/skills/* ~/.claude/skills/
 
 每个阶段结束前需要用户确认，AI 不会自动跳入下一阶段。
 
-### 使用示例
+## 使用示例
 
 **开始一个新实验：**
 ```
@@ -83,7 +52,7 @@ cp -r awesome-prompt-skills/skills/* ~/.claude/skills/
 节点 E02 做完了，R² = 0.73，RMSE = 18.4 mW/m²
 ```
 
-### 每个阶段的产出文件
+## 每个阶段的产出文件
 
 ```
 实验名称/
@@ -94,30 +63,8 @@ cp -r awesome-prompt-skills/skills/* ~/.claude/skills/
 └── 复盘报告.md          ← exp-retro 产出
 ```
 
-### 适用场景
+## 适用场景
 
 - 机器学习 / 深度学习对比实验
 - 地学 / 空间数据分析实验
 - 任何需要系统化管理的科研实验
-
-详见 [exp-workflow/README.md](./exp-workflow/README.md)
-
----
-
-## 论文引用系列 · paper-citation
-
-学术论文智能引用检索与 Tier 分级推荐。
-
-### 功能
-
-- 根据用户输入的文本语义搜索相关学术论文（Semantic Scholar + OpenAlex API）
-- Tier 分级评估（Tier 1 强推荐 / Tier 2 推荐 / Tier 3 条件推荐）
-- 自动生成 BibTeX 引用格式
-- 支持中英文双语评价体系（CSSCI/北核 + SSCI/SCI/CCF）
-- 内置错误处理与 API 降级策略
-
-### 使用方法
-
-在 Claude Code 中输入 `/paper-citation`，或在文本中标记 `[CITE]` 触发自动检索。
-
-详见 [paper-citation/SKILL.md](./paper-citation/SKILL.md)
